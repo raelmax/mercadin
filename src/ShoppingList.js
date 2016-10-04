@@ -9,24 +9,40 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 
-const ContentList = ({handleDialog}) => (
+const ContentList = ({handleDialog, items}) => (
   <List>
     <ListItem
       primaryText="Nova Lista"
       leftIcon={<ActionAddShoppingCart color={blue500} />}
       onTouchTap={handleDialog} />
-
     <Divider />
 
-    <ListItem primaryText="Compras do Mês" leftIcon={<ActionShoppingCart />} />
-    <ListItem primaryText="Coisas da Jerssica" leftIcon={<ActionShoppingCart />} />
-    <ListItem primaryText="Noite Mexicana" leftIcon={<ActionShoppingCart />} />
+    {items.map(item => <ListItem key={item.id} primaryText={item.name} leftIcon={<ActionShoppingCart />} />)}
   </List>
 )
 
 class ShoppingList extends Component {
   state = {
     open: false,
+    listItems: []
+  };
+
+  addListItem = (e) => {
+    e.preventDefault();
+
+    if (this.refs.listName.getValue()) {
+      let index = this.state.listItems.length + 1;
+
+      this.setState({
+        open: false,
+        listItems: this.state.listItems.concat(
+          [{id: index, name: this.refs.listName.getValue()}]
+        )
+      });
+    } else {
+      this.setState({open: false});
+    }
+
   };
 
   handleDialog = () => {
@@ -34,19 +50,19 @@ class ShoppingList extends Component {
   };
 
   render() {
-    const actions = [
-      <RaisedButton label="Salvar" primary={true} onTouchTap={this.handleDialog} />
-    ]
-
     return (
         <div>
-          <ContentList handleDialog={this.handleDialog}/>
-          <Dialog actions={actions} modal={false} open={this.state.open} onRequestClose={this.handleDialog}>
-            <TextField
-              hintText="Compras do Mês"
-              floatingLabelText="Nome da Lista"
-              floatingLabelFixed={true}
-              fullWidth={true} />
+          <ContentList handleDialog={this.handleDialog} items={this.state.listItems} />
+          <Dialog modal={false} open={this.state.open} onRequestClose={this.handleDialog}>
+            <form onSubmit={this.addListItem}>
+              <TextField
+                ref="listName"
+                hintText="Compras do Mês"
+                floatingLabelText="Nome da Lista"
+                floatingLabelFixed={true}
+                fullWidth={true} />
+              <RaisedButton style={{marginTop: 15, float: "right"}} label="Salvar" primary={true} type="submit" />
+            </form>
           </Dialog>
         </div>
     )
