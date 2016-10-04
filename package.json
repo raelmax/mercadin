@@ -1,6 +1,7 @@
 {
   "name": "mercadin",
   "version": "0.1.0",
+  "homepage": "http://raelmax.github.io/mercadin",
   "private": true,
   "devDependencies": {
     "react-scripts": "0.6.1"
@@ -14,7 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
