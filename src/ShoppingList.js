@@ -23,26 +23,15 @@ const ContentList = ({handleDialog, items}) => (
 
 class ShoppingList extends Component {
   state = {
-    open: false,
-    listItems: []
+    open: false
   };
 
   addListItem = (e) => {
     e.preventDefault();
 
-    if (this.refs.listName.getValue()) {
-      let index = this.state.listItems.length + 1;
+    this.props.addItemHandle(this.refs.listName.getValue());
 
-      this.setState({
-        open: false,
-        listItems: this.state.listItems.concat(
-          [{id: index, name: this.refs.listName.getValue()}]
-        )
-      });
-    } else {
-      this.setState({open: false});
-    }
-
+    this.setState({open: false});
   };
 
   handleDialog = () => {
@@ -52,7 +41,7 @@ class ShoppingList extends Component {
   render() {
     return (
         <div>
-          <ContentList handleDialog={this.handleDialog} items={this.state.listItems} />
+          <ContentList handleDialog={this.handleDialog} items={this.props.listItems} />
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleDialog}>
             <form onSubmit={this.addListItem}>
               <TextField
