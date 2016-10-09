@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
-import ShoppingList from './ShoppingList';
-import ProductList from './ProductList';
-
 
 class Mercadin extends Component {
   state = {
@@ -28,16 +25,7 @@ class Mercadin extends Component {
       <MuiThemeProvider>
         <div>
           <AppBar title="Mercadin" showMenuIconButton={false} />
-          {(() => {
-            switch (this.state.pageName) {
-              case "shoppinglist":
-                return <ShoppingList listItems={this.state.shoppingLists} addItemHandle={this.addItemHandle} />;
-              case "productlist":
-                return <ProductList />;
-              default:
-                return "#FFFFFF";
-            }
-          })()}
+          <div>{this.props.children}</div>
         </div>
       </MuiThemeProvider>
     );

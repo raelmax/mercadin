@@ -9,17 +9,16 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 
-const ContentList = ({handleDialog, items}) => (
+const ContentList = ({handleDialog, items, openList}) => (
   <List>
     <ListItem
       primaryText="Nova Lista"
       leftIcon={<ActionAddShoppingCart color={blue500} />}
       onTouchTap={handleDialog} />
     <Divider />
-
-    {Object.keys(items).map((key) =>
-      <ListItem key={items[key].id} primaryText={items[key].name} leftIcon={<ActionShoppingCart />} />
-    )}
+    <ListItem key="1" primaryText="Compras do Mês" onTouchTap={() => openList(1)} leftIcon={<ActionShoppingCart />} />
+    <ListItem key="2" primaryText="Jantar Romântico" onTouchTap={() => openList(2)} leftIcon={<ActionShoppingCart  />} />
+    <ListItem key="3" primaryText="Almoço de Domingo" onTouchTap={() => openList(3)} leftIcon={<ActionShoppingCart />} />
   </List>
 )
 
@@ -30,8 +29,7 @@ class ShoppingList extends Component {
 
   addListItem = (e) => {
     e.preventDefault();
-
-    this.props.addItemHandle(this.listNameInput.getValue());
+    //this.props.addItemHandle(this.listNameInput.getValue());
     this.setState({open: false});
   };
 
@@ -39,10 +37,14 @@ class ShoppingList extends Component {
     this.setState({open: !this.state.open});
   };
 
+  openList = (key) => {
+      this.context.router.push('/' + key);
+  };
+
   render() {
     return (
         <div>
-          <ContentList handleDialog={this.handleDialog} items={this.props.listItems} />
+          <ContentList handleDialog={this.handleDialog} items={this.props.listItems} openList={this.openList}/>
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleDialog}>
             <form onSubmit={this.addListItem}>
               <TextField
@@ -58,5 +60,9 @@ class ShoppingList extends Component {
     )
   }
 }
+
+ShoppingList.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
 
 export default ShoppingList;

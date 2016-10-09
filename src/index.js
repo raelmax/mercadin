@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import Mercadin from './App';
+import Routes from './Routes';
 
 injectTapEventPlugin();
 
 ReactDOM.render(
-  <Mercadin />,
+  <Routes />,
   document.getElementById('root')
 );
