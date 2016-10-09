@@ -17,7 +17,9 @@ const ContentList = ({handleDialog, items}) => (
       onTouchTap={handleDialog} />
     <Divider />
 
-    {items.map(item => <ListItem key={item.id} primaryText={item.name} leftIcon={<ActionShoppingCart />} />)}
+    {Object.keys(items).map((key) =>
+      <ListItem key={items[key].id} primaryText={items[key].name} leftIcon={<ActionShoppingCart />} />
+    )}
   </List>
 )
 
@@ -29,8 +31,7 @@ class ShoppingList extends Component {
   addListItem = (e) => {
     e.preventDefault();
 
-    this.props.addItemHandle(this.refs.listName.getValue());
-
+    this.props.addItemHandle(this.listNameInput.getValue());
     this.setState({open: false});
   };
 
@@ -45,7 +46,7 @@ class ShoppingList extends Component {
           <Dialog modal={false} open={this.state.open} onRequestClose={this.handleDialog}>
             <form onSubmit={this.addListItem}>
               <TextField
-                ref="listName"
+                ref={(c) => this.listNameInput = c}
                 hintText="Compras do Mês"
                 floatingLabelText="Nome da Lista"
                 floatingLabelFixed={true}

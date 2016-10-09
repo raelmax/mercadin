@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
-import ShoppingList from './ShoppingList'
+import ShoppingList from './ShoppingList';
+import ProductList from './ProductList';
 
 
 class Mercadin extends Component {
   state = {
     pageName: "shoppinglist",
-    shoppingLists: []
+    shoppingLists: {}
   };
 
   addItemHandle = (itemName) => {
-    let updatedList = this.state.shoppingLists.concat(
-      [{id: new Date().getTime(), name: itemName}]
-    );
+    let shoppingLists = this.state.shoppingLists;
+    let listId = new Date().getTime();
 
-    updatedList.sort((a, b) => b.id - a.id);
+    shoppingLists[listId] = {name: itemName, products: []};
 
     this.setState({
-      shoppingLists: updatedList
+      shoppingLists: shoppingLists
     });
   };
 
@@ -28,7 +28,16 @@ class Mercadin extends Component {
       <MuiThemeProvider>
         <div>
           <AppBar title="Mercadin" showMenuIconButton={false} />
-          <ShoppingList listItems={this.state.shoppingLists} addItemHandle={this.addItemHandle} />
+          {(() => {
+            switch (this.state.pageName) {
+              case "shoppinglist":
+                return <ShoppingList listItems={this.state.shoppingLists} addItemHandle={this.addItemHandle} />;
+              case "productlist":
+                return <ProductList />;
+              default:
+                return "#FFFFFF";
+            }
+          })()}
         </div>
       </MuiThemeProvider>
     );
