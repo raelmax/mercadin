@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Mercadin from './App';
+import Mercadin from './components/App';
 
 ReactDOM.render(
   <Mercadin />,
