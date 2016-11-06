@@ -2,10 +2,12 @@ export const ADD_ITEM_TO_LIST = 'ADD_ITEM_TO_LIST';
 export const SET_ITEM_ATTRIBUTES = 'SET_ITEM_ATTRIBUTES';
 export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
 
-export function addItemToList(id) {
+let nextListItemId = 0
+export function addItemToList(name) {
   return {
     type: ADD_ITEM_TO_LIST,
-    id
+    id: nextListItemId++,
+    name
   }
 }
 

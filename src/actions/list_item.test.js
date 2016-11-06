@@ -4,23 +4,23 @@ describe('list items actions', () => {
 
   it('addItemToList', () => {
     expect(
-      actions.addItemToList(1)
-    ).toEqual({type: actions.ADD_ITEM_TO_LIST, id: 1});
+      actions.addItemToList("Rice")
+    ).toEqual({type: actions.ADD_ITEM_TO_LIST, id: 0, name: "Rice"});
   });
 
   it('setItemAttributes', () => {
     const attributes = {price: 1.0, quantity: 1};
     expect(
-      actions.setItemAttributes(1, attributes)
+      actions.setItemAttributes(0, attributes)
     ).toEqual(
-      {type: actions.SET_ITEM_ATTRIBUTES, id: 1, attributes: attributes}
+      {type: actions.SET_ITEM_ATTRIBUTES, id: 0, attributes: attributes}
     );
   });
 
   it('removeItemFromList', () => {
     expect(
-      actions.removeItemFromList(1)
-    ).toEqual({type: actions.REMOVE_ITEM_FROM_LIST, id: 1});
+      actions.removeItemFromList(0)
+    ).toEqual({type: actions.REMOVE_ITEM_FROM_LIST, id: 0});
   });
 
 });
