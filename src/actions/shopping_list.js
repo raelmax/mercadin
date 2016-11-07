@@ -7,7 +7,8 @@ export function addShoppingList(name) {
   return {
     type: ADD_SHOPPING_LIST,
     id: nextShoppingId++,
-    name
+    name,
+    items: []
   }
 }
 

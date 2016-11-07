@@ -3,25 +3,28 @@ export const SET_ITEM_ATTRIBUTES = 'SET_ITEM_ATTRIBUTES';
 export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
 
 let nextListItemId = 0
-export function addItemToList(name) {
+export function addItemToList(listId, name) {
   return {
     type: ADD_ITEM_TO_LIST,
     id: nextListItemId++,
+    listId,
     name
   }
 }
 
-export function setItemAttributes(id, attributes) {
+export function setItemAttributes(listId, id, attributes) {
   return {
     type: SET_ITEM_ATTRIBUTES,
+    listId,
     id,
     attributes
   }
 }
 
-export function removeItemFromList(id) {
+export function removeItemFromList(listId, id) {
   return {
     type: REMOVE_ITEM_FROM_LIST,
+    listId,
     id
   }
 }
