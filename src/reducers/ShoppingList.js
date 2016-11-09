@@ -1,4 +1,4 @@
-import * as actions from '../actions/shopping_list';
+import * as actions from '../actions/ShoppingListActions';
 
 export const shoppingList = (state = [], action) => {
   switch (action.type) {

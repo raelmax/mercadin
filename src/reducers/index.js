@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { shoppingList } from './shopping_list';
-import { listItem } from './list_item';
+import { shoppingList } from './ShoppingList';
+import { listItem } from './ListItem';
 
 const shoppingListApp = combineReducers({
   shoppingList,

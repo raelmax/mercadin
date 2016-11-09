@@ -1,5 +1,5 @@
-import * as actions from '../actions/shopping_list';
-import { shoppingList } from './shopping_list';
+import * as actions from '../actions/ShoppingListActions';
+import { shoppingList } from './ShoppingList';
 
 it('When ADD_SHOPPING_LIST', () => {
   const action = actions.addShoppingList('My Shopping List');

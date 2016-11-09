@@ -1,4 +1,4 @@
-import * as actions from '../actions/list_item';
+import * as actions from '../actions/ListItemActions';
 
 export const listItem = (state = [], action) => {
   switch (action.type) {

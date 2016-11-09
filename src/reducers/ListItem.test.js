@@ -1,5 +1,5 @@
-import * as actions from '../actions/list_item';
-import { listItem } from './list_item';
+import * as actions from '../actions/ListItemActions';
+import { listItem } from './ListItem';
 
 
 it('When ADD_ITEM_TO_LIST', () => {

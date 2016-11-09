@@ -1,4 +1,4 @@
-import * as actions from './shopping_list';
+import * as actions from './ShoppingListActions';
 
 describe('shopping list actions', () => {
 
