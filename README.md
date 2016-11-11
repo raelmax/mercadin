@@ -25,3 +25,29 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+# Components
+
+<ShoppingLists>
+  <AddForm />
+  <List>
+    <ListItem />
+    ...
+  </List>
+</ShoppingLists>
+
+<ItemLists>
+  <AddItemFormAttributes />
+  <AddForm />
+  <List>
+    <ListItem />
+    ...
+  </List>
+  <Result />
+</ItemLists>
+
+<Provider>
+  <Mercadin>
+    <ShoppingLists /> || <ItemLists />
+  </Mercadin>
+</Provider>

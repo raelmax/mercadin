@@ -5,7 +5,7 @@ describe('list items actions', () => {
   it('addItemToList', () => {
     expect(
       actions.addItemToList(1, "Rice")
-    ).toEqual({type: actions.ADD_ITEM_TO_LIST, id: 0, name: "Rice", listId: 1});
+    ).toEqual({type: actions.ADD_ITEM_TO_LIST, id: 0, text: "Rice", listId: 1});
   });
 
   it('setItemAttributes', () => {

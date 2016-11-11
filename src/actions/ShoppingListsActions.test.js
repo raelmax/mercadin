@@ -5,7 +5,7 @@ describe('shopping list actions', () => {
   it('addShoppingList', () => {
     expect(
       actions.addShoppingList('My ShoppingList')
-    ).toEqual({type: actions.ADD_SHOPPING_LIST, id: 0, name: 'My ShoppingList', items: []});
+    ).toEqual({type: actions.ADD_SHOPPING_LIST, id: 0, text: 'My ShoppingList', items: []});
   });
 
   it('removeShoppingList', () => {
@@ -16,9 +16,9 @@ describe('shopping list actions', () => {
 
   it('editShoppingList', () => {
     expect(
-      actions.editShoppingList(0, 'New Shopping Name')
+      actions.editShoppingList(0, 'New Shopping text')
     ).toEqual(
-      {type: actions.EDIT_SHOPPING_LIST, id: 0, name: 'New Shopping Name'}
+      {type: actions.EDIT_SHOPPING_LIST, id: 0, text: 'New Shopping text'}
     );
   });
 

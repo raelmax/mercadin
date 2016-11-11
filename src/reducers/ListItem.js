@@ -10,7 +10,7 @@ export const listItem = (state = [], action) => {
 
         return {
           ...shoppingList,
-          items: [...shoppingList.items, {id: action.id, name: action.name}]
+          items: [...shoppingList.items, {id: action.id, text: action.text}]
         }
       });
     case actions.SET_ITEM_ATTRIBUTES:

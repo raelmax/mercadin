@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { Router, Route, browserHistory } from 'react-router';
 import Mercadin from './components/App';
+import shoppingListApp from './reducers/Index';
+
+let store = createStore(shoppingListApp);
+
+// Create an enhanced history that syncs navigation events with the store
+const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
-  <Mercadin />,
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={Mercadin} />
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
