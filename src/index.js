@@ -4,7 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, Route, browserHistory } from 'react-router';
-import Mercadin from './components/App';
+import ShoppingList from './components/ShoppingList';
+import ShoppingListDetail from './components/ShoppingListDetail';
 import shoppingListApp from './reducers/Index';
 
 let store = createStore(shoppingListApp);
@@ -15,7 +16,8 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Mercadin} />
+      <Route path="/" component={ShoppingList} />
+      <Route path="/l/:listId" component={ShoppingListDetail} />
     </Router>
   </Provider>,
   document.getElementById('root')

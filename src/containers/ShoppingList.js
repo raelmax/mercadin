@@ -16,9 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const ShoppingList = connect(
+export const ShoppingList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(List)
-
-export default ShoppingList;
+)(List);
