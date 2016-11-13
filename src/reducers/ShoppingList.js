@@ -1,4 +1,6 @@
 import * as actions from '../actions/ShoppingListActions';
+import * as listItemActions from '../actions/ListItemActions';
+import { listItem } from './ListItem';
 
 export const shoppingList = (state = [], action) => {
   switch (action.type) {
@@ -17,6 +19,10 @@ export const shoppingList = (state = [], action) => {
       });
     case actions.REMOVE_SHOPPING_LIST:
       return state.filter(shoppingList => shoppingList.id !== action.id);
+    case listItemActions.ADD_ITEM_TO_LIST:
+    case listItemActions.SET_ITEM_ATTRIBUTES:
+    case listItemActions.REMOVE_ITEM_FROM_LIST:
+      return listItem(state, action);
     default:
       return state;
   }

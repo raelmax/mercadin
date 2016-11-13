@@ -1,31 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { addShoppingList } from '../actions/ShoppingListActions';
+import React, { PropTypes } from 'react';
 
-let AddForm = ({ dispatch }) => {
+const AddForm = ({ onAddFormSubmit, buttonText }) => {
   let input;
-
   return (
-    <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addShoppingList(input.value))
-        input.value = ''
+    <form onSubmit={e => {
+        e.preventDefault();
+        onAddFormSubmit(input);
       }}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          Add
-        </button>
-      </form>
-    </div>
+      <input ref={node => {input = node}} />
+      <button type="submit">{buttonText}</button>
+    </form>
   )
 }
 
-AddForm = connect()(AddForm);
+AddForm.propTypes = {
+  onAddFormSubmit: PropTypes.func.isRequired,
+  buttonText: PropTypes.string.isRequired
+}
 
 export default AddForm;

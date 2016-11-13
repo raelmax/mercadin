@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import AddForm from './AddForm';
+import { AddShoppingListForm } from '../containers/AddShoppingListForm';
 import * as containers from '../containers/ShoppingList';
 
 class ShoppingList extends Component {
@@ -8,7 +8,7 @@ class ShoppingList extends Component {
     return (
       <div>
         <h3><Link to={'/'}>Listas de Compras</Link></h3>
-        <AddForm />
+        <AddShoppingListForm />
         <containers.ShoppingList />
       </div>
     );
