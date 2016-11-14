@@ -1,10 +1,7 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
 
 const ListItem = ({ onClick, text, id }) => (
-  <li onClick={onClick}>
-    <Link to={`/l/${id}`}>{text}</Link>
-  </li>
+  <li onClick={onClick}>{text}</li>
 )
 
 ListItem.propTypes = {

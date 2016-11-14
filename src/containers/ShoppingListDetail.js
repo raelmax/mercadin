@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { editShoppingList } from '../actions/ShoppingListActions';
 import List from '../components/List';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,8 +12,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onListItemClick: (id, text) => {
-      dispatch(editShoppingList(id, text));
+    onListItemClick: (id) => {
+      console.log(`Item Comprado ${id}`);
+
     }
   }
 }

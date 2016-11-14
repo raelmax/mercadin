@@ -7,7 +7,7 @@ const List = ({ listItems, onListItemClick }) => (
       <ListItem
         key={listItem.id}
         {...listItem}
-        onClick={() => null}
+        onClick={() => onListItemClick(listItem.id)}
       />
     )}
   </ul>
