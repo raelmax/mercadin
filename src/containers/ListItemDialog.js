@@ -5,14 +5,16 @@ import { openBuyDialog } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    openDialog: state.listItemDialog.openDialog
+    openDialog: state.listItemDialog.openDialog,
+    listId: state.listItemDialog.listId,
+    id: state.listItemDialog.id
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCloseDialog: () => {
-      dispatch(openBuyDialog());
+    onCloseDialog: (listId, id) => {
+      dispatch(openBuyDialog(listId, id));
     }
   }
 }

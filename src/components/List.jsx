@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import ListItem from './ListItem';
 
-const List = ({ listItems, onListItemClick }) => (
+const List = ({ listItems, listId, onListItemClick }) => (
   <ul>
     {listItems.map(listItem =>
       <ListItem
         key={listItem.id}
         {...listItem}
-        onClick={() => onListItemClick(listItem.id)}
+        onClick={() => onListItemClick(listId, listItem.id)}
       />
     )}
   </ul>
@@ -18,6 +18,7 @@ List.propTypes = {
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired
   }).isRequired).isRequired,
+  listId: PropTypes.number,
   onListItemClick: PropTypes.func.isRequired
 }
 

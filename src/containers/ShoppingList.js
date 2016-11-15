@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onListItemClick: (id) => {
+    onListItemClick: (listId, id) => {
       dispatch(push(`/l/${id}`));
     }
   }

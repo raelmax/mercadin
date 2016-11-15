@@ -4,17 +4,19 @@ import List from '../components/List';
 import { openBuyDialog } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
+  const listId = parseInt(ownProps.params.listId, 10);
   return {
     listItems: state.shoppingList.find(
-      shoppingList => shoppingList.id === parseInt(ownProps.params.listId, 10)
-    ).items
+      shoppingList => shoppingList.id === listId
+    ).items,
+    listId: listId
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onListItemClick: (id) => {
-      dispatch(openBuyDialog(id));
+    onListItemClick: (listId, id) => {
+      dispatch(openBuyDialog(listId, id));
     }
   }
 }
