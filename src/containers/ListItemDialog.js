@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import BuyItemForm from '../components/BuyItemForm';
-import { openBuyDialog } from '../actions/ListItemActions';
+import { toggleBuyDialog, setItemAttributes } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,8 +13,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onCloseDialog: (listId, id) => {
-      dispatch(openBuyDialog(listId, id));
+    onCloseDialog: () => {
+      dispatch(toggleBuyDialog());
+    },
+    onSubmit: (listId, id, quantity, value) => {
+      dispatch(setItemAttributes(listId, id, quantity, value));
+      dispatch(toggleBuyDialog());
     }
   }
 }

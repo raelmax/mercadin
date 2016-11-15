@@ -3,9 +3,13 @@ import * as actions from '../actions/ListItemActions';
 const initialState = {openDialog: false, listId: null, id: null};
 export const listItemDialog = (state = initialState, action) => {
   switch (action.type) {
-    case actions.OPEN_BUY_DIALOG:
+    case actions.TOGGLE_BUY_DIALOG:
+      return Object.assign({}, state, {
+        openDialog: !state.openDialog
+      })
+    case actions.OPEN_ITEM_BUY_DIALOG:
       return {
-        openDialog: !state.openDialog,
+        openDialog: true,
         listId: action.listId,
         id: action.id
       }

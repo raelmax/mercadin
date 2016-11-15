@@ -25,7 +25,10 @@ export const listItem = (state = [], action) => {
             if (item.id !== action.id) {
               return item;
             }
-            return {...item, ...action.attributes}
+            return Object.assign({}, item, {
+              quantity: action.quantity,
+              price: action.price
+            })
           })
         }
       });
