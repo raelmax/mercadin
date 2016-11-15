@@ -8,6 +8,7 @@ const List = ({ listItems, listId, onListItemClick }) => (
         key={listItem.id}
         {...listItem}
         onClick={() => onListItemClick(listId, listItem.id)}
+        bought={(listItem.price && listItem.quantity)}
       />
     )}
   </ul>

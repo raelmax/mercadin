@@ -7,8 +7,8 @@ const AddForm = ({ onAddFormSubmit, buttonText }) => {
         e.preventDefault();
         onAddFormSubmit(input);
       }}>
-      <input ref={node => {input = node}} />
-      <button type="submit">{buttonText}</button>
+      <input ref={node => {input = node}} type={"text"} />
+      <button type={"submit"}>{buttonText}</button>
     </form>
   )
 }

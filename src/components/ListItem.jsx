@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-const ListItem = ({ onClick, text, id }) => (
-  <li onClick={onClick}>{text}</li>
+const ListItem = ({ onClick, text, id, bought }) => (
+  <li onClick={onClick} style={{textDecoration: bought ? 'line-through' : 'none'}}>{text}</li>
 )
 
 ListItem.propTypes = {
