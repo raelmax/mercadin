@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   ).items;
 
   return {
-    total: items.reduce((total, num) => { return total + parseInt(num.price, 10) || 0}, 0),
+    total: items.reduce((total, num) => { return total + (num.price * num.quantity)}, 0),
   }
 }
 

@@ -10,7 +10,8 @@ export const listItem = (state = [], action) => {
 
         return {
           ...shoppingList,
-          items: [...shoppingList.items, {id: action.id, text: action.text}]
+          items: [...shoppingList.items, {id: action.id, text: action.text,
+                                          price: 0, quantity: 0}]
         }
       });
     case actions.SET_ITEM_ATTRIBUTES:
@@ -26,8 +27,8 @@ export const listItem = (state = [], action) => {
               return item;
             }
             return Object.assign({}, item, {
-              quantity: action.quantity,
-              price: action.price
+              quantity: parseInt(action.quantity, 10),
+              price: parseFloat(action.price)
             })
           })
         }
