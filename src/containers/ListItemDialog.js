@@ -16,8 +16,8 @@ const mapDispatchToProps = (dispatch) => {
     onCloseDialog: () => {
       dispatch(toggleBuyDialog());
     },
-    onSubmit: (listId, id, quantity, value) => {
-      dispatch(setItemAttributes(listId, id, quantity, value));
+    onSubmit: (listId, id, quantity, price) => {
+      dispatch(setItemAttributes(listId, id, quantity, price));
       dispatch(toggleBuyDialog());
     }
   }

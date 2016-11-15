@@ -9,7 +9,7 @@ const BuyItemForm = ({ openDialog, listId, id, onCloseDialog, onSubmit }) => {
       {openDialog ? (
       <form onSubmit={e => {
           e.preventDefault();
-          onSubmit(listId, id, price.value, quantity.value);
+          onSubmit(listId, id, quantity.value, price.value);
         }}>
         <input ref={node => {quantity = node}} type={"number"} placeholder={"quantidade"} />
         <input ref={node => {price = node}} placeholder={"preço"} />

@@ -3,7 +3,6 @@ import { push } from 'react-router-redux'
 import List from '../components/List';
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     listItems: state.shoppingList
   }
