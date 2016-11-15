@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { AddShoppingItemForm } from '../containers/AddShoppingItemForm';
 import * as containers from '../containers/ShoppingListDetail';
+import { AddShoppingItemForm } from '../containers/AddShoppingItemForm';
 import { HeaderDetail } from '../containers/HeaderDetail';
+import { ListItemDialog } from '../containers/ListItemDialog';
 
 class ShoppingListDetail extends Component {
   render() {
@@ -12,6 +13,7 @@ class ShoppingListDetail extends Component {
         <HeaderDetail />
         <AddShoppingItemForm />
         <containers.ShoppingListDetail />
+        <ListItemDialog />
       </div>
     );
   }

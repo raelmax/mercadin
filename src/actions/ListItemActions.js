@@ -1,4 +1,5 @@
 export const ADD_ITEM_TO_LIST = 'ADD_ITEM_TO_LIST';
+export const OPEN_BUY_DIALOG = 'OPEN_BUY_DIALOG';
 export const SET_ITEM_ATTRIBUTES = 'SET_ITEM_ATTRIBUTES';
 export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
 
@@ -9,6 +10,14 @@ export function addItemToList(listId, text) {
     id: nextListItemId++,
     listId,
     text
+  }
+}
+
+export function openBuyDialog(listId, id) {
+  return {
+    type: OPEN_BUY_DIALOG,
+    listId,
+    id
   }
 }
 

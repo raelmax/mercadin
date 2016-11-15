@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import List from '../components/List';
+import { openBuyDialog } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,8 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onListItemClick: (id) => {
-      console.log(`Item Comprado ${id}`);
-
+      dispatch(openBuyDialog(id));
     }
   }
 }
