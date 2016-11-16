@@ -1,21 +1,32 @@
 import React, { PropTypes } from 'react';
 
-const AddForm = ({ onAddFormSubmit, buttonText }) => {
+const wrapperStyles = {
+  backgroundColor: '#4B698B',
+  padding: 10,
+}
+const inputStyles = {
+  padding: '5px 10px',
+  width: '100%',
+  color: '#444'
+}
+
+const AddForm = ({ onAddFormSubmit, placeholderText }) => {
   let input;
   return (
-    <form onSubmit={e => {
-        e.preventDefault();
-        onAddFormSubmit(input);
-      }}>
-      <input ref={node => {input = node}} type={"text"} />
-      <button type={"submit"}>{buttonText}</button>
-    </form>
+    <div style={wrapperStyles}>
+      <form onSubmit={e => {
+          e.preventDefault();
+          onAddFormSubmit(input);
+        }}>
+        <input ref={node => {input = node}} type={"text"} placeholder={placeholderText} style={inputStyles} />
+      </form>
+    </div>
   )
 }
 
 AddForm.propTypes = {
   onAddFormSubmit: PropTypes.func.isRequired,
-  buttonText: PropTypes.string.isRequired
+  placeholderText: PropTypes.string.isRequired
 }
 
 export default AddForm;

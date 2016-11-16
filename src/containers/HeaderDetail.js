@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     text: state.shoppingList.find(
       shoppingList => shoppingList.id === parseInt(ownProps.params.listId, 10)
-    ).text
+    ).text,
+    backButton: ownProps.backButton
   }
 }
 

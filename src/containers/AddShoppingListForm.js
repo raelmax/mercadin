@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(addShoppingList(input.value));
       input.value = '';
     },
-    buttonText: 'adicionar'
+    placeholderText: 'Ex: Nova Lista de Compras'
   }
 }
 

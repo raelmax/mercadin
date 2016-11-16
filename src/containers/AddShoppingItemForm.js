@@ -5,7 +5,7 @@ import AddForm from '../components/AddForm';
 
 const mapStateToTrops = (dispatch, ownProps) => {
   return {
-    buttonText: 'adicionar'
+    placeholderText: 'Ex: Feijão, Azeitonas, Arroz...'
   }
 }
 

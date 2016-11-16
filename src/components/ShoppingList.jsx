@@ -7,7 +7,7 @@ class ShoppingList extends Component {
   render() {
     return (
       <div>
-        <Header text={'Listas de Compras'} />
+        <Header text={'Minhas Listas'} />
         <AddShoppingListForm />
         <containers.ShoppingList />
       </div>
