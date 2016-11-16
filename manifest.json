@@ -1,6 +1,7 @@
 {
   "lang": "en",
-  "background_color": "#133253",
+  "background_color": "#D4DDE7",
+  "theme_color": "#133253",
   "name": "Mercadin | Listas de Compras",
   "short_name": "Mercadin",
   "display": "standalone",
