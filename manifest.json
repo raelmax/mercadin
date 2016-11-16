@@ -1,0 +1,14 @@
+{
+  "lang": "en",
+  "background_color": "#133253",
+  "name": "Mercadin | Listas de Compras",
+  "short_name": "Mercadin",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "YOU-NEED-TO-HAVE-A-144-x-144-ICON.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
