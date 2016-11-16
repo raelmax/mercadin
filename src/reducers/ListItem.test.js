@@ -10,7 +10,7 @@ it('When ADD_ITEM_TO_LIST', () => {
   const stateAfter = [{
     id: 0,
     text: 'Shopping List',
-    items: [{id: 0, text: 'Rice'}]
+    items: [{id: 0, text: 'Rice', price: 0, quantity: 0}]
   }];
 
   expect(
@@ -19,17 +19,18 @@ it('When ADD_ITEM_TO_LIST', () => {
 });
 
 it('When SET_ITEM_ATTRIBUTES', () => {
-  const attributes = {price: 0.5, quantity: 1};
-  const action = actions.setItemAttributes(0, 0, attributes);
+  const price = 0.5;
+  const quantity = 1;
+  const action = actions.setItemAttributes(0, 0, quantity, price);
   const stateBefore = [{
     id: 0,
     text: 'Shopping List',
-    items: [{id: 0, text: 'Rice'}]
+    items: [{id: 0, text: 'Rice', price: 0, quantity: 0}]
   }];
   const stateAfter = [{
     id: 0,
     text: 'Shopping List',
-    items: [{id: 0, text: 'Rice', price: 0.5, quantity: 1}]
+    items: [{id: 0, text: 'Rice', price: price, quantity: quantity}]
   }];
 
   expect(

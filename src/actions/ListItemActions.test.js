@@ -9,11 +9,13 @@ describe('list items actions', () => {
   });
 
   it('setItemAttributes', () => {
-    const attributes = {price: 1.0, quantity: 1};
+    const quantity = 1;
+    const price = 1.0;
+
     expect(
-      actions.setItemAttributes(0, 0, attributes)
+      actions.setItemAttributes(0, 0, quantity, price)
     ).toEqual(
-      {type: actions.SET_ITEM_ATTRIBUTES, listId: 0, id: 0, attributes: attributes}
+      {type: actions.SET_ITEM_ATTRIBUTES, listId: 0, id: 0, quantity: quantity, price: price}
     );
   });
 
