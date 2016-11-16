@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 const listStyles = {
   padding: '15px 10px',
   listStyle: 'none',
-  margin: 0,
+  margin: '0 0 40px 0',
 }
 
 const List = ({ listItems, listId, onListItemClick }) => (
