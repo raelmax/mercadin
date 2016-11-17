@@ -1,0 +1,86 @@
+.add-form-wrapper {
+  background: #4B698B;
+  padding: 10px;
+}
+.add-form-input {
+  padding: 5px 10px;
+  width: 100%;
+  color: #444;
+}
+
+.buy-item-form {
+  background-color: #D4DDE7;
+  border: 1px solid #133253;
+  margin: -75px 0 0 -125px;
+  position: absolute;
+  max-width: 250px;
+  height: 150px;
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+}
+.buy-item-input {
+  border: 1px solid #f9f9f9;
+  margin-bottom: 2px;
+  text-align: right;
+  padding: 10px;
+  width: 100%;
+}
+.buy-item-button {
+  background-color: #2B4C6F;
+  border: none;
+  padding: 5px;
+  color: #fff;
+  width: 50%;
+}
+.buy-item-button-cancel {
+  background-color: #A5B7CA;
+}
+
+.header {
+  background-color: #133253;
+  padding: 15px 10px;
+  position: relative;
+}
+.header-text {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+  margin: 0;
+}
+.header-back-button {
+  text-decoration: none;
+  position: absolute;
+  line-height: 40px;
+  font-size: 50px;
+  color: #fff;
+  top: 0;
+}
+
+.list-default {
+  padding: 15px 10px;
+  margin: 0 0 40px 0;
+  list-style: none;
+}
+.list-default-item {
+  border-bottom: 1px solid #D4DDE7;
+  padding: 10px 5px;
+  cursor: pointer;
+  color: #2B4C6F;
+}
+.list-default-item-bought {
+  text-decoration: line-through;
+}
+
+.total-info {
+  background-color: #133253;
+  text-align: right;
+  position: fixed;
+  padding: 10px;
+  height: 40px;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+}

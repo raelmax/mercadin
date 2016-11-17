@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { Router, Route, hashHistory } from 'react-router';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
+
+import './app.css';
+
 import ShoppingList from './components/ShoppingList';
 import ShoppingListDetail from './components/ShoppingListDetail';
 import shoppingListApp from './reducers/Index';
