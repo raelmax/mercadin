@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './Header';
 import * as containers from '../containers/Index';
 
-class ShoppingList extends Component {
-  render() {
-    return (
-      <div>
-        <Header text={'Minhas Listas'} />
-        <containers.AddShoppingListForm />
-        <containers.ShoppingList />
-      </div>
-    );
-  }
-}
+const ShoppingList = () => (
+  <div>
+    <Header text={'Minhas Listas'} />
+    <containers.AddShoppingListForm />
+    <containers.ShoppingList />
+  </div>
+);
 
 export default ShoppingList;
