@@ -4,7 +4,7 @@ import * as containers from '../containers/Index';
 
 const ShoppingList = () => (
   <div>
-    <Header text={'Minhas Listas'} />
+    <Header text="Minhas Listas" />
     <containers.AddShoppingListForm />
     <containers.ShoppingList />
   </div>

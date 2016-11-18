@@ -8,7 +8,8 @@ const ListItem = ({ onClick, text, id, bought }) => (
 ListItem.propTypes = {
   onClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
+  bought: PropTypes.number
 }
 
 export default ListItem;

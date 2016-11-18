@@ -8,7 +8,8 @@ const AddForm = ({ onAddFormSubmit, placeholderText }) => {
           e.preventDefault();
           onAddFormSubmit(input);
         }}>
-        <input className="add-form-input" ref={node => {input = node}} type={"text"} placeholder={placeholderText} />
+        <input className="add-form-input" ref={node => {input = node}}
+               type={"text"} placeholder={placeholderText} autoFocus={true} />
       </form>
     </div>
   )
