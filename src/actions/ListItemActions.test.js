@@ -8,6 +8,18 @@ describe('list items actions', () => {
     ).toEqual({type: actions.ADD_ITEM_TO_LIST, id: 0, text: "Rice", listId: 1});
   });
 
+  it('toggleBuyDialog', () => {
+    expect(
+      actions.toggleBuyDialog()
+    ).toEqual({type: actions.TOGGLE_BUY_DIALOG});
+  });
+
+  it('openItemBuyDialog', () => {
+    expect(
+      actions.openItemBuyDialog(0, 1)
+    ).toEqual({type: actions.OPEN_ITEM_BUY_DIALOG, listId: 0, id: 1})
+  });
+
   it('setItemAttributes', () => {
     const quantity = 1;
     const price = 1.0;
