@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { AddShoppingListForm } from '../containers/AddShoppingListForm';
-import * as containers from '../containers/ShoppingList';
 import Header from './Header';
+import * as containers from '../containers/Index';
 
 class ShoppingList extends Component {
   render() {
     return (
       <div>
         <Header text={'Minhas Listas'} />
-        <AddShoppingListForm />
+        <containers.AddShoppingListForm />
         <containers.ShoppingList />
       </div>
     );

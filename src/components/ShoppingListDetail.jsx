@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import * as containers from '../containers/ShoppingListDetail';
-import { AddShoppingItemForm } from '../containers/AddShoppingItemForm';
-import { HeaderDetail } from '../containers/HeaderDetail';
-import { ListItemDialog } from '../containers/ListItemDialog';
-import { TotalInfo } from '../containers/ShoppingListInfo';
+import * as containers from '../containers/Index';
 
 class ShoppingListDetail extends Component {
   render() {
     return (
       <div>
-        <HeaderDetail backButton={true} />
-        <AddShoppingItemForm />
+        <containers.HeaderDetail />
+        <containers.AddShoppingItemForm />
         <containers.ShoppingListDetail />
-        <ListItemDialog />
-        <TotalInfo />
+        <containers.ListItemDialog />
+        <containers.ShoppingListInfo />
       </div>
     );
   }

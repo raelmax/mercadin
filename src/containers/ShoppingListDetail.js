@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import List from '../components/List';
 import { openItemBuyDialog } from '../actions/ListItemActions';
+import List from '../components/List';
 
 const mapStateToProps = (state, ownProps) => {
   const listId = parseInt(ownProps.params.listId, 10);

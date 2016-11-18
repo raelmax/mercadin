@@ -13,6 +13,6 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export const TotalInfo = withRouter(connect(
+export const ShoppingListInfo = withRouter(connect(
   mapStateToProps
 )(Total));
