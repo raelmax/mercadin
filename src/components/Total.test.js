@@ -12,5 +12,4 @@ describe('Component: <Total />', () => {
 
     expect(total.text()).toEqual("Total: R$ 0.5");
   });
-
 });
