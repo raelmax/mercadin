@@ -15,6 +15,7 @@ describe('Component: <Header />', () => {
 
   it('renders back button if necessary', () => {
     const header = shallow(<Header text="Test Header" backButton={true} />);
+
     expect(header.find('.header-back-button').length).toEqual(1);
   });
 });

@@ -9,7 +9,9 @@ describe('Component: <AddForm />', () => {
 
   it('renders with correct text', () => {
     const addForm = shallow(<AddForm onAddFormSubmit={() => {}} placeholderText="add new item" />);
-    expect(addForm.find('input').props().placeholder).toEqual('add new item');
+    const { placeholder } = addForm.find('input').props();
+
+    expect(placeholder).toEqual('add new item');
   });
 
   it('call onAddFormSubmit prop on form submit', () => {
