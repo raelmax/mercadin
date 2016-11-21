@@ -5,7 +5,7 @@
   "name": "Mercadin | Listas de Compras",
   "short_name": "Mercadin",
   "display": "standalone",
-  "start_url": "./",
+  "start_url": "/mercadin/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
