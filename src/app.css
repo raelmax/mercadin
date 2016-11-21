@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .add-form-wrapper {
   background: #4B698B;
   padding: 10px;
