@@ -2,10 +2,10 @@
   "lang": "en",
   "background_color": "#D4DDE7",
   "theme_color": "#133253",
-  "name": "Mercadin | Listas de Compras",
+  "name": "Listas de Compras",
   "short_name": "Mercadin",
   "display": "standalone",
-  "start_url": "/mercadin/",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

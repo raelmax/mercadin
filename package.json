@@ -1,7 +1,7 @@
 {
   "name": "mercadin",
   "version": "0.1.0",
-  "homepage": "http://raelmax.github.io/mercadin",
+  "homepage": "https://mercadin.herokuapp.com",
   "private": false,
   "devDependencies": {
     "enzyme": "^2.6.0",
