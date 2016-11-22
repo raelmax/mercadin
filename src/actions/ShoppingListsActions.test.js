@@ -4,7 +4,7 @@ describe('shopping list actions', () => {
 
   it('addShoppingList', () => {
     expect(
-      actions.addShoppingList('My ShoppingList')
+      actions.addShoppingList(0, 'My ShoppingList')
     ).toEqual({type: actions.ADD_SHOPPING_LIST, id: 0, text: 'My ShoppingList', items: []});
   });
 

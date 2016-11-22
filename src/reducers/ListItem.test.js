@@ -3,7 +3,7 @@ import { listItem } from './ListItem';
 
 
 it('When add a new item to list', () => {
-  const action = actions.addItemToList(1, 'Rice');
+  const action = actions.addItemToList(1, 0, 'Rice');
   const stateBefore = [
     {id: 0, text: 'Shopping List 1', items: []},
     {id: 1, text: 'Shopping List 2', items: []}

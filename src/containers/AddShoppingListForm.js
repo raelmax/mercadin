@@ -8,7 +8,8 @@ const mapDispatchToProps = (dispatch) => {
       if (!input.value.trim()) {
         return
       }
-      dispatch(addShoppingList(input.value));
+      const id = new Date().getTime();
+      dispatch(addShoppingList(id, input.value));
       input.value = '';
     },
     placeholderText: 'Ex: Nova Lista de Compras'

@@ -16,7 +16,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         return
       }
       const listId = parseInt(ownProps.params.listId, 10);
-      dispatch(addItemToList(listId, input.value));
+      const id = new Date().getTime();
+      dispatch(addItemToList(listId, id, input.value));
       input.value = '';
     }
   }
