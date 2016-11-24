@@ -27,11 +27,12 @@ export function openItemBuyDialog(listId, id) {
   }
 }
 
-export function setItemAttributes(listId, id, quantity, price) {
+export function setItemAttributes(listId, id, text, quantity, price) {
   return {
     type: SET_ITEM_ATTRIBUTES,
     listId,
     id,
+    text,
     quantity,
     price
   }

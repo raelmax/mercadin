@@ -21,13 +21,14 @@ describe('list items actions', () => {
   });
 
   it('setItemAttributes', () => {
+    const text = "updated text";
     const quantity = 1;
     const price = 1.0;
 
     expect(
-      actions.setItemAttributes(0, 0, quantity, price)
+      actions.setItemAttributes(0, 0, text, quantity, price)
     ).toEqual(
-      {type: actions.SET_ITEM_ATTRIBUTES, listId: 0, id: 0, quantity: quantity, price: price}
+      {type: actions.SET_ITEM_ATTRIBUTES, listId: 0, id: 0, text: text, quantity: quantity, price: price}
     );
   });
 

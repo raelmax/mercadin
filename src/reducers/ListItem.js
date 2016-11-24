@@ -27,6 +27,7 @@ export const listItem = (state = [], action) => {
               return item;
             }
             return Object.assign({}, item, {
+              text: action.text,
               quantity: parseInt(action.quantity, 10),
               price: parseFloat(action.price)
             })

@@ -4,10 +4,15 @@ import BuyItemForm from '../components/BuyItemForm';
 import { toggleBuyDialog, setItemAttributes } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
+  const listId = state.listItemDialog.listId;
+  const item = state.shoppingList.find(
+    shoppingList => shoppingList.id === listId
+  ).items.find(item => item.id === state.listItemDialog.id);
+
   return {
     openDialog: state.listItemDialog.openDialog,
-    listId: state.listItemDialog.listId,
-    id: state.listItemDialog.id
+    listId: listId,
+    item: item
   }
 }
 
@@ -16,8 +21,8 @@ const mapDispatchToProps = (dispatch) => {
     onCloseDialog: () => {
       dispatch(toggleBuyDialog());
     },
-    onSubmit: (listId, id, quantity, price) => {
-      dispatch(setItemAttributes(listId, id, quantity, price));
+    onSubmit: (listId, id, text, quantity, price) => {
+      dispatch(setItemAttributes(listId, id, text, quantity, price));
       dispatch(toggleBuyDialog());
     }
   }

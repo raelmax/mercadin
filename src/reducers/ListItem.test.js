@@ -19,16 +19,17 @@ it('When add a new item to list', () => {
 });
 
 it('When set attribute to list item', () => {
+  const text = "Updated Shopping List";
   const price = 0.5;
   const quantity = 1;
-  const action = actions.setItemAttributes(1, 0, quantity, price);
+  const action = actions.setItemAttributes(1, 0, text, quantity, price);
   const stateBefore = [
     {id: 0, text: 'Shopping List 1', items: []},
     {id: 1, text: 'Shopping List 1', items: [{id: 0, text: 'Rice', price: 0, quantity: 0}]}
   ];
   const stateAfter = [
     {id: 0, text: 'Shopping List 1', items: []},
-    {id: 1, text: 'Shopping List 1', items: [{id: 0, text: 'Rice', price: price, quantity: quantity}]}
+    {id: 1, text: 'Shopping List 1', items: [{id: 0, text: text, price: price, quantity: quantity}]}
   ];
 
   expect(
