@@ -11,19 +11,19 @@ import ShoppingList from './components/ShoppingList';
 import ShoppingListDetail from './components/ShoppingListDetail';
 import shoppingListApp from './reducers/Index';
 
-const middleware = routerMiddleware(browserHistory)
+const middleware = routerMiddleware(browserHistory);
 // try get data from localStorage
 const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
 let store = createStore(shoppingListApp, persistedState, applyMiddleware(middleware));
 
 // persist store on localStorage
-store.subscribe(()=>{
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
 });
 
 
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>

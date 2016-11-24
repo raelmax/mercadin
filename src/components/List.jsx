@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 
 const List = ({ listItems, listId, onListItemClick }) => (
   <ul className="list-default">
-    {listItems.map(listItem =>
+    {listItems.sort((a, b) => b.id - a.id).map(listItem =>
       <ListItem
         key={listItem.id}
         {...listItem}
