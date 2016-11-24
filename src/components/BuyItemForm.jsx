@@ -13,7 +13,7 @@ const BuyItemForm = ({ openDialog, listId, item, onCloseDialog, onSubmit }) => {
         <input className="buy-item-input" ref={node => {text = node}} type="text" placeholder="Nome" defaultValue={item.text}/>
         <input className="buy-item-input" ref={node => {quantity = node}} type="number" placeholder="Quantidade" defaultValue={item.quantity} autoFocus={true} />
         <input className="buy-item-input" ref={node => {price = node}} type="number" step="any" min={0} placeholder="Preço" defaultValue={item.price} />
-        <button className="buy-item-button" type="submit">comprar</button>
+        <button className="buy-item-button" type="submit">{(item.price && item.quantity) ? "editar": "comprar"}</button>
         <button className="buy-item-button buy-item-button-cancel" type="button" onClick={onCloseDialog}>cancelar</button>
       </form> ) : null }
     </div>
