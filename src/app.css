@@ -43,8 +43,10 @@
 }
 .delete-item-button {
   margin: 10px 0 0 0;
+  background: none;
   font-size: 90%;
   color: #943838;
+  border: none;
   float: right;
   padding: 0;
 }
