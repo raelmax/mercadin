@@ -22,8 +22,8 @@ const BuyItemForm = ({ openDialog, listId, item, onCloseDialog, onSubmit }) => {
 
 BuyItemForm.propTypes = {
   openDialog: PropTypes.bool.isRequired,
-  listId: PropTypes.number,
-  item: PropTypes.object,
+  listId: PropTypes.number.isRequired,
+  item: PropTypes.object.isRequired,
   onCloseDialog: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired
 }
