@@ -15,10 +15,10 @@
 .buy-item-form {
   background-color: #D4DDE7;
   border: 1px solid #133253;
-  margin: -100px 0 0 -125px;
+  margin: -115px 0 0 -125px;
   position: absolute;
   max-width: 250px;
-  height: 200px;
+  height: 230px;
   padding: 20px;
   left: 50%;
   top: 50%;
@@ -40,6 +40,13 @@
 }
 .buy-item-button-cancel {
   background-color: #A5B7CA;
+}
+.delete-item-button {
+  margin: 10px 0 0 0;
+  font-size: 90%;
+  color: #943838;
+  float: right;
+  padding: 0;
 }
 
 .header {

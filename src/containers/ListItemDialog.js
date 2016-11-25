@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import BuyItemForm from '../components/BuyItemForm';
-import { toggleBuyDialog, setItemAttributes } from '../actions/ListItemActions';
+import { toggleBuyDialog, setItemAttributes, removeItemFromList } from '../actions/ListItemActions';
 
 const mapStateToProps = (state, ownProps) => {
   const listId = state.listItemDialog.listId;
@@ -23,6 +23,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     onSubmit: (listId, id, text, quantity, price) => {
       dispatch(setItemAttributes(listId, id, text, quantity, price));
+      dispatch(toggleBuyDialog());
+    },
+    onDelete: (listId, id) => {
+      dispatch(removeItemFromList(listId, id));
       dispatch(toggleBuyDialog());
     }
   }
